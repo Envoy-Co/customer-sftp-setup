@@ -44,7 +44,7 @@ else
     echo ""
     echo "Error sending key to Envoy."
     echo ""
-    echo "Please copy everything in this section and email it to: sftpacccess@goenvoy.co"
+    echo "Please copy everything in this section and email it to: support@con-ericenvoy.zendesk.com"
     echo "------------------------------------------------"
     echo ""
     echo "$KEY"
