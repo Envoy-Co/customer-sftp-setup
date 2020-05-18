@@ -24,7 +24,7 @@ done
 [ ! -d "~/.ssh" ] && mkdir ~/.ssh
 cd ~/.ssh
 
-ssh-keygen -P "" -f envoy-sftp-key 2>&1
+ssh-keygen -P "" -f ~/.ssh/envoy-sftp-key 2>&1
 echo ""
 echo ""
 echo "We will now send the public key to Envoy to complete your account creation."
