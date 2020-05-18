@@ -1,7 +1,6 @@
 #!/bin/bash
 clear
 
-cd ~/.ssh
 echo "Envoy.co Customer SFTP Configuation Tool"
 echo "----------------------------------------"
 echo ""
@@ -22,6 +21,9 @@ while true; do
     esac
 done
 
+[ ! -d "~/.ssh" ] && mkdir ~/.ssh
+cd ~/.ssh
+
 ssh-keygen -P "" -f envoy-sftp-key 2>&1
 echo ""
 echo ""
@@ -35,7 +37,7 @@ STR='{"request": {"requester": {"name": "'$name'","email":"'$email'"}, "subject"
 RESP=$(curl https://con-ericenvoy.zendesk.com/api/v2/requests.json \
     -d "$STR" \
     -X POST -H "Content-Type: application/json")
-#echo "$RESP"
+
 SUB='request'
 if [[ "$RESP" == *"$SUB"* ]]; then
     echo ""
